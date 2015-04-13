@@ -3,49 +3,57 @@
  * https://github.com/facebook/react-native
  */
 'use strict';
-var testkdb=require("./testkdb");
+//require("./testkdb");
+var kfs = require('NativeModules').KsanaFileSystem; 
+global.kfs=kfs;
+
+var Test=require("./main2");
 var React = require('react-native');
 var {
   AppRegistry,
+  Image,
+  ListView,
   StyleSheet,
   Text,
   View,
 } = React;
 
 var reactnative_ksana_sample = React.createClass({
-  componentWillMount:function() {
-    testkdb();
-  }
-  ,render: function() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!Q
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js{'\n'}
-          Press Cmd+R to reload
-        </Text>
-      </View>
-    );
-  }
+
+  render: function() {
+    
+    return <Test/>
+  },
+
+ 
 });
 
 var styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  rightContainer: {
+    flex: 1,
   },
-  instructions: {
+  title: {
+    fontSize: 20,
+    marginBottom: 8,
     textAlign: 'center',
-    color: '#333333',
+  },
+  year: {
+    textAlign: 'center',
+  },
+  thumbnail: {
+    width: 53,
+    height: 81,
+  },
+  listView: {
+    paddingTop: 20,
+    backgroundColor: '#F5FCFF',
   },
 });
 
