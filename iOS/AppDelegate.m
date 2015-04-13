@@ -26,6 +26,8 @@
   //
   // To run on device, change `localhost` to the IP address of your computer, and make sure your computer and
   // iOS device are on the same Wi-Fi network.
+#if TARGET_IPHONE_SIMULATOR
+  
   jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle"];
 
   // OPTION 2
@@ -34,8 +36,9 @@
   // $ curl 'http://localhost:8081/index.ios.bundle?dev=false&minify=true' -o iOS/main.jsbundle
   //
   // and uncomment the next following line
-  // jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-
+#else
+  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+#endif
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"reactnative_ksana_sample"
                                                    launchOptions:launchOptions];

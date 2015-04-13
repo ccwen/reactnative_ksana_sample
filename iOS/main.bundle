@@ -2318,9 +2318,9 @@ var styles=StyleSheet.create({
     	alignSelf: 'stretch'	    
 	},
 	bodytext: {
-		fontSize: 24,
+		fontSize: 16,
 		margin: 0,
-		lineHeight:30,
+		lineHeight:20,
 		backgroundColor:'#FFFFFF',
 		color: '#656500'
 	},
@@ -2353,8 +2353,8 @@ var styles=StyleSheet.create({
     alignSelf: 'stretch'
   },
   scrollView: {
-    backgroundColor: '#FFFFFF',
-    height: 1000,
+    backgroundColor: '#000000',
+    height: 400,
   },
 })
 
@@ -2380,7 +2380,7 @@ var Test=React.createClass({displayName: "Test",
 		this.state.db.get(["fileContents",f,p],function(data){
 			that.setState({text:data});
 			setTimeout(function(){
-			//	that.refs.tofind.focus();	
+				that.refs.tofind.focus();	
 			},10);
 			
 		})
@@ -2415,7 +2415,7 @@ var Test=React.createClass({displayName: "Test",
             React.createElement(Text, {style: styles.buttonText}, "fetch")
           )
           ), 
-          React.createElement(ScrollView, {style: styles.scrollView}, 
+          React.createElement(ScrollView, {horizontal: true, style: styles.scrollView}, 
 		React.createElement(Text, {style: styles.bodytext}, this.state.text)
 		)
 
