@@ -1,11 +1,15 @@
 {
   "name": "reactnative_ksana_sample",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "node_modules/react-native/packager/packager.sh"
   },
   "dependencies": {
-    "react-native": "^0.3.11"
+    "react-native": "*",
+    "ksana-analyzer": "git+https://github.com/ksanaforge/ksana-analyzer.git",
+    "ksana-database": "git+https://github.com/ksanaforge/ksana-database.git",
+    "ksana-jsonrom": "git+https://github.com/ksanaforge/ksana-jsonrom.git",
+    "ksana-search": "git+https://github.com/ksanaforge/ksana-search.git"
   }
 }
