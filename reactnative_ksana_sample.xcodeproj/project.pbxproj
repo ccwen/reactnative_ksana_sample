@@ -24,6 +24,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		240DAD511B0C9F6F00326F02 /* sample.kdb in Resources */ = {isa = PBXBuildFile; fileRef = 240DAD501B0C9F6F00326F02 /* sample.kdb */; };
+		240DAD531B0CBE6600326F02 /* moedict.kdb in Resources */ = {isa = PBXBuildFile; fileRef = 240DAD521B0CBE6600326F02 /* moedict.kdb */; };
+		240DAD551B0CC79F00326F02 /* cbeta.kdb in Resources */ = {isa = PBXBuildFile; fileRef = 240DAD541B0CC79F00326F02 /* cbeta.kdb */; };
 		244F90BD1B0C97F200CF4346 /* kfs_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 244F90BA1B0C97F200CF4346 /* kfs_ios.m */; };
 		244F90BE1B0C97F200CF4346 /* kfs_rct.m in Sources */ = {isa = PBXBuildFile; fileRef = 244F90BC1B0C97F200CF4346 /* kfs_rct.m */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -138,6 +140,8 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iOS/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		240DAD501B0C9F6F00326F02 /* sample.kdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.kdb; sourceTree = "<group>"; };
+		240DAD521B0CBE6600326F02 /* moedict.kdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = moedict.kdb; sourceTree = "<group>"; };
+		240DAD541B0CC79F00326F02 /* cbeta.kdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cbeta.kdb; sourceTree = "<group>"; };
 		244F90B91B0C97F200CF4346 /* kfs_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kfs_ios.h; path = "node_modules/ksana-react-native/kfs_ios.h"; sourceTree = "<group>"; };
 		244F90BA1B0C97F200CF4346 /* kfs_ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = kfs_ios.m; path = "node_modules/ksana-react-native/kfs_ios.m"; sourceTree = "<group>"; };
 		244F90BB1B0C97F200CF4346 /* kfs_rct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kfs_rct.h; path = "node_modules/ksana-react-native/kfs_rct.h"; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 		13B07FAE1A68108700A75B9A /* reactnative_ksana_sample */ = {
 			isa = PBXGroup;
 			children = (
+				240DAD541B0CC79F00326F02 /* cbeta.kdb */,
+				240DAD521B0CBE6600326F02 /* moedict.kdb */,
 				240DAD501B0C9F6F00326F02 /* sample.kdb */,
 				244F90B91B0C97F200CF4346 /* kfs_ios.h */,
 				244F90BA1B0C97F200CF4346 /* kfs_ios.m */,
@@ -551,6 +557,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240DAD531B0CBE6600326F02 /* moedict.kdb in Resources */,
+				240DAD551B0CC79F00326F02 /* cbeta.kdb in Resources */,
 				008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,

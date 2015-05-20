@@ -1,5 +1,7 @@
-var kde=require("ksana-database");
 var React=require("react-native");
+var kde=require("ksana-database");
+var kse=require("ksana-search");
+var SearchResult=require("./searchresult");
 var {
   AppRegistry,
   StyleSheet,
@@ -17,7 +19,7 @@ var styles=StyleSheet.create({
 	    alignItems: 'center'
 	  },
 	title: {
-		fontSize: 10,
+		fontSize: 24,
 		margin: 5,
 		backgroundColor:'#FFFFFF',
 		color: '#656565'
@@ -33,6 +35,7 @@ var styles=StyleSheet.create({
 		borderRadius: 6,
 		color: '#656565'
 	},
+
   	button: {
 	    height: 36,
 	    flex: 1,
@@ -54,24 +57,32 @@ var styles=StyleSheet.create({
 
 var Test=React.createClass({
 	getInitialState:function() {
-		return {db:null,text:"",tofind:"0.1"}
+		return {db:null,text:"",excerpts:[],tofind:"菩提"}
 	}
 	,componentDidMount:function() {
 		var that=this;
-		kde.open("cbeta",function(err,db){
+		kde.open("moedict",function(err,db){
 			setTimeout(function(){
 				if (db) that.setState({db:db});
 			},500)
 		},this);
 	}
+	,search:function(tofind) {
+		kse.search(this.state.db,tofind,{nohighlight:true,range:{maxhit:10}},function(err,data){
+			console.log("result length",Object.keys(data),err)
+			this.setState({excerpts:data.excerpt||[],text:""});
+		}.bind(this));
+	}
 	,getText:function(tofind) {
 		if (!this.state.db) return "";
 		var that=this;
 		var sp=tofind.split(".");
+		if (sp.length==1) return this.search(tofind);
+
 		var f=parseInt(sp[0]||"0");
 		var p=parseInt(sp[1]||"0");
-		this.state.db.get(["fileContents",f,p],function(data){
-			that.setState({text:data});
+		this.state.db.get(["filecontents",f,p],function(data){
+			that.setState({text:data,excerpts:[]});
 			setTimeout(function(){
 				that.refs.tofind.focus();	
 			},10);
@@ -108,8 +119,8 @@ var Test=React.createClass({
             <Text style={styles.buttonText}>fetch</Text>
           </TouchableHighlight>
           </View>
-
-		<Text style={styles.title}>{this.state.text}</Text>
+          <Text style={styles.title}>{this.state.text}</Text>
+		<SearchResult excerpts={this.state.excerpts}/>
 
 		</View>
 	}

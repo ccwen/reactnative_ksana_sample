@@ -21,7 +21,6 @@ var {
 var reactnative_ksana_sample = React.createClass({
 
   render: function() {
-    
     return <Test/>
   },
 
